@@ -9,9 +9,7 @@ gltfLoader.load(
     scene.add(gltf.scene)
     console.log(gltf.scene)
   },
-  (xhr) => {
-    console.log((xhr.loaded / xhr.total * 100) + '% loaded')
-  },
+  () => {},
   (error) => {
     console.error(error)
   }
