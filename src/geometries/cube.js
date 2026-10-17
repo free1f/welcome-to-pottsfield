@@ -1,9 +1,14 @@
 import { THREE } from '../scene/main.js'
 import { enochHexColors } from '../utils/constants.js'
-import scene from '../scene/main.js'
+import scene, { textureLoader } from '../scene/main.js'
 
 const numbersOfCloths = 45;
 const yHeight = 2
+
+const clothColorTexture = textureLoader.load('./cloth/FabricPlainNaturalSheer009_COL_1K.jpg')
+const clothNormalTexture = textureLoader.load('./cloth/FabricPlainNaturalSheer009_NRM_1K.png')
+
+clothColorTexture.colorSpace = THREE.SRGBColorSpace
 
 export function createScreenTube(yPos = 0, yScale = 1, zPos = 0, rotation = 18) {
   const width = 2;
@@ -24,8 +29,17 @@ export function createScreenTube(yPos = 0, yScale = 1, zPos = 0, rotation = 18) 
   }
   geometry.computeVertexNormals();
 
-  const frontMaterial = new THREE.MeshBasicMaterial({ color: enochHexColors[Math.floor(Math.random() * enochHexColors.length)]});
-  const sideMaterial = new THREE.MeshBasicMaterial({ color: '#000000' });
+  const frontMaterial = new THREE.MeshStandardMaterial({
+    map: clothColorTexture,
+    normalMap: clothNormalTexture,
+    color: enochHexColors[Math.floor(Math.random() * enochHexColors.length)]
+  });
+  const sideMaterial = new THREE.MeshStandardMaterial({
+    map: clothColorTexture,
+    normalMap: clothNormalTexture,
+    color: enochHexColors[Math.floor(Math.random() * enochHexColors.length)]
+    // color: '#000000'
+  });
   const materialsArray = [
     sideMaterial,
     sideMaterial,

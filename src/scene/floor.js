@@ -1,6 +1,4 @@
-import { THREE, scene } from './main.js'
-
-const textureLoader = new THREE.TextureLoader()
+import { THREE, scene, textureLoader } from './main.js'
 
 // Floor
 const floorAlphaTexture = textureLoader.load('./floor/alpha.webp')
