@@ -1,12 +1,13 @@
 import { THREE } from './scene/main.js'
+import { animateTubes } from './geometries/cube.js'
 import { sizes } from './utils/constants.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Timer } from 'three/addons/misc/Timer.js'
+import { camera, orthographicCamera } from './scene/camera.js'
 import scene from './scene/main.js'
 import gui from './utils/gui.js'
 import './scene/sky.js'
 import './models/enoch.js'
-import { camera, orthographicCamera } from './scene/camera.js'
 import './geometries/tube.js'
 import './geometries/cube.js'
 
@@ -68,6 +69,7 @@ const tick = () =>
   controls.update()
 
   // Render
+  animateTubes(elapsedTime)
   // renderer.render(scene, camera)
   renderer.render(scene, orthographicCamera)
 
