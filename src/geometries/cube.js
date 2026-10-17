@@ -4,6 +4,7 @@ import scene, { textureLoader } from '../scene/main.js'
 
 const numbersOfCloths = 50;
 const yHeight = 2
+const zSpacing = 0.1
 
 const clothColorTexture = textureLoader.load('./cloth/FabricPlainNaturalSheer009_COL_1K.jpg')
 const clothNormalTexture = textureLoader.load('./cloth/FabricPlainNaturalSheer009_NRM_1K.png')
@@ -61,12 +62,18 @@ export function createScreenTube(yPos = 0, yScale = 1, zPos = 0, rotation = 18) 
 for (let i = 0; i < numbersOfCloths; i++) {
   const yPosInterval = THREE.MathUtils.randFloat(-1, 1);
   const yScaleInterval = THREE.MathUtils.randFloat(-0.2, 0.2);
-  const zPosInterval = THREE.MathUtils.randFloat(-0.1, 0.1);
+  const zPosInterval = (i - numbersOfCloths / 2) * zSpacing;
   const randomRotation = THREE.MathUtils.randFloat(15, 30);
 
   const tube = createScreenTube(yPosInterval, yScaleInterval, zPosInterval, randomRotation);
   tubes.push(tube);
   scene.add(tube);
+}
+
+export function fitTubesToWidth(visibleWidth) {
+  for (const tube of tubes) {
+    tube.scale.x = visibleWidth / 2;
+  }
 }
 
 export function animateTubes(elapsedTime) {

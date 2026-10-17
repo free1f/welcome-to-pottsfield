@@ -1,9 +1,9 @@
 import { Sky } from 'three/addons/objects/Sky.js'
-import scene from './main.js'
+import mainScene from './main.js'
 // Sky
 const sky = new Sky()
 sky.scale.setScalar(100)
-scene.add(sky)
+mainScene.add(sky)
 
 // sky.material.uniforms['turbidity'].value = 10
 // sky.material.uniforms['rayleigh'].value = 3

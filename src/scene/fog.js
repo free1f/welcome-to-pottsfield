@@ -1,5 +1,5 @@
-import { THREE, scene } from './main.js'
+import { THREE, mainScene } from './main.js'
 
 // Fog
-// scene.fog = new THREE.Fog('#ff0000', 10, 13)
-// scene.fog = new THREE.FogExp2('#daedee', 0.1)
+// mainScene.fog = new THREE.Fog('#ff0000', 10, 13)
+// mainScene.fog = new THREE.FogExp2('#daedee', 0.1)

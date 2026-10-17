@@ -1,4 +1,4 @@
-import { THREE, scene, textureLoader } from './main.js'
+import { THREE, mainScene, textureLoader } from './main.js'
 
 // Floor
 const floorAlphaTexture = textureLoader.load('./floor/alpha.webp')
@@ -41,6 +41,6 @@ const floor = new THREE.Mesh(
 )
 
 floor.rotation.x = - Math.PI * 0.5
-scene.add(floor)
+mainScene.add(floor)
 
 export default floor
