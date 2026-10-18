@@ -5,7 +5,7 @@ gltfLoader.load(
   (gltf) => {
     gltf.scene.scale.set(1, 1, 1)
     gltf.scene.rotation.y = Math.PI
-    gltf.scene.position.set(5, 0, 9)
+    gltf.scene.position.set(4, 0, 9)
     mainScene.add(gltf.scene)
   },
   () => {},

@@ -5,5 +5,6 @@ const scene = new THREE.Scene()
 const mainScene = new THREE.Scene()
 const gltfLoader = new GLTFLoader()
 const textureLoader = new THREE.TextureLoader()
+const state = { currentScene: 'intro' }
 
-export { THREE, scene, mainScene, gltfLoader, textureLoader }
+export { THREE, scene, mainScene, gltfLoader, textureLoader, state }

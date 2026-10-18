@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Pottsfield</title>
-  <link rel="icon" type="image/png" href="./pumpkin.png">
+  <link rel="icon" type="image/png" href="./images/pumpkin.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -13,9 +13,30 @@
   <div
     class="enter-button"
     id="enter-button"
-    style="background-image: url('./button.png');"
-    alt="button"
-  />
+    style="background-image: url('./images/button.png');"
+    role="button"
+    aria-label="enter"
+  ></div>
+  <div 
+    class="leave-button"
+    id="leave-button"
+    style="background-image: url('./images/leave.png');"
+    role="button"
+    aria-label="leave"
+  ></div>
+  <div
+    class="are-you-sure-modal"
+    id="are-you-sure-modal"
+    style="background-image: url('./images/are_you_sure.png');"
+    role="dialog"
+    aria-label="are you sure"
+  ></div>
+  <h3
+    class="leave-text"
+    id="leave-text"
+  >
+    "You will join us someday..."
+  </h3>
   <script type="module" src="./script.js"></script>
 </body>
 </html>

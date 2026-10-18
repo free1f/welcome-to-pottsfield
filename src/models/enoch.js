@@ -4,7 +4,7 @@ gltfLoader.load(
   '/enoch/SM_Enoch.gltf',
   (gltf) => {
     gltf.scene.scale.set(1, 1, 1)
-    gltf.scene.position.set(0, 0, -5)
+    gltf.scene.position.set(-5, 0, -5)
     mainScene.add(gltf.scene)
   },
   () => {},

@@ -33,12 +33,6 @@ body
     height: 20vh;
 }
 
-.enter-button.hidden
-{
-    opacity: 0;
-    pointer-events: none;
-}
-
 .fade
 {
     position: fixed;
@@ -52,4 +46,57 @@ body
 .fade.active
 {
     opacity: 1;
+}
+
+.leave-button
+{
+    position: fixed;
+    left: 10%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: opacity 0.5s;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15vw;
+    height: 15vh;
+    visibility: hidden;
+}
+
+.are-you-sure-modal
+{
+    position: fixed;
+    left: 10%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: opacity 0.5s;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15vw;
+    height: 15vh;
+    visibility: hidden;
+}
+
+.leave-text
+{
+    position: fixed;
+    /* Center the text in the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    visibility: hidden;
+}
+
+.enter-button.hidden,
+.leave-button.hidden,
+.are-you-sure-modal.hidden
+{
+    opacity: 0;
+    pointer-events: none;
 }

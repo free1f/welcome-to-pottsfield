@@ -4,7 +4,7 @@ import { sizes } from './utils/constants.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Timer } from 'three/addons/misc/Timer.js'
 import { camera, orthographicCamera, updateOrthographicCamera } from './scene/camera.js'
-import { mainScene, scene } from './scene/main.js'
+import { mainScene, scene, state } from './scene/main.js'
 import gui from './utils/gui.js'
 import './scene/sky.js'
 import './models/enoch.js'
@@ -12,6 +12,7 @@ import './models/wirt.js'
 import './geometries/cube.js'
 import './scene/floor.js'
 import './scene/lights.js'
+import './scene/buttonActions.js'
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -50,22 +51,6 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  * Animate
  */
 const timer = new Timer()
-let currentScene = 'intro'
-
-const enterButton = document.getElementById('enter-button')
-const fade = document.getElementById('fade')
-
-enterButton.addEventListener('click', () =>
-{
-  enterButton.classList.add('hidden')
-  fade.classList.add('active')
-
-  setTimeout(() =>
-  {
-    currentScene = 'main'
-    fade.classList.remove('active')
-  }, 1000)
-}, { once: true })
 
 const tick = () =>
 {
@@ -73,7 +58,7 @@ const tick = () =>
   timer.update()
   const elapsedTime = timer.getElapsed()
 
-  if (currentScene === 'intro') {
+  if (state.currentScene === 'intro') {
     animateTubes(elapsedTime)
     renderer.render(scene, orthographicCamera)
   } else {
