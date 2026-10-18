@@ -1,6 +1,5 @@
-import { THREE } from '../scene/main.js'
+import { THREE, textureLoader, scene } from '../scene/main.js'
 import { enochHexColors } from '../utils/constants.js'
-import scene, { textureLoader } from '../scene/main.js'
 
 const numbersOfCloths = 50;
 const yHeight = 2

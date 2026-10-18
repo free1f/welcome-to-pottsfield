@@ -4,30 +4,16 @@ import { sizes } from './utils/constants.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { Timer } from 'three/addons/misc/Timer.js'
 import { camera, orthographicCamera, updateOrthographicCamera } from './scene/camera.js'
-import mainScene from './scene/main.js'
-import scene from './scene/main.js'
+import { mainScene, scene } from './scene/main.js'
 import gui from './utils/gui.js'
 import './scene/sky.js'
 import './models/enoch.js'
 import './geometries/cube.js'
+import './scene/floor.js'
+import './scene/lights.js'
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
-
-/**
- * Lights
- */
-// Ambient light
-const ambientLight = new THREE.AmbientLight('#dfe7ec', 0.275)
-mainScene.add(ambientLight)
-
-// Directional light
-const directionalLight = new THREE.DirectionalLight('#86cdff', 1)
-directionalLight.position.set(0, 10, 30)
-mainScene.add(directionalLight)
-scene.add(directionalLight)
-const directionalHelper = new THREE.DirectionalLightHelper(directionalLight)
-mainScene.add(directionalHelper)
 
 window.addEventListener('resize', () =>
 {
@@ -64,6 +50,21 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const timer = new Timer()
 let currentScene = 'intro'
+
+const enterButton = document.getElementById('enter-button')
+const fade = document.getElementById('fade')
+
+enterButton.addEventListener('click', () =>
+{
+  enterButton.classList.add('hidden')
+  fade.classList.add('active')
+
+  setTimeout(() =>
+  {
+    currentScene = 'main'
+    fade.classList.remove('active')
+  }, 1000)
+}, { once: true })
 
 const tick = () =>
 {

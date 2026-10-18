@@ -7,4 +7,3 @@ const gltfLoader = new GLTFLoader()
 const textureLoader = new THREE.TextureLoader()
 
 export { THREE, scene, mainScene, gltfLoader, textureLoader }
-export default scene

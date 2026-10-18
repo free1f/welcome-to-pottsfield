@@ -1,5 +1,4 @@
-import { THREE } from './main.js'
-import scene from './main.js'
+import { THREE, scene } from './main.js'
 import { sizes } from '../utils/constants.js'
 /**
  * Camera
@@ -26,8 +25,6 @@ orthographicCamera.position.y = 2
 
 const helper = new THREE.CameraHelper(orthographicCamera)
 
-// scene.add(camera)
-scene.add(helper)
 scene.add(orthographicCamera)
 
 export { camera, orthographicCamera, updateOrthographicCamera }

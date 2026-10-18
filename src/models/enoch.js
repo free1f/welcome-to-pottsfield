@@ -1,5 +1,4 @@
-import mainScene from '../scene/main.js'
-import { gltfLoader } from '../scene/main.js'
+import { mainScene, gltfLoader } from '../scene/main.js'
 
 // Models
 gltfLoader.load(

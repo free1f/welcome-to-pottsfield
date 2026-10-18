@@ -1,5 +1,5 @@
 import { Sky } from 'three/addons/objects/Sky.js'
-import mainScene from './main.js'
+import { mainScene } from './main.js'
 // Sky
 const sky = new Sky()
 sky.scale.setScalar(100)
