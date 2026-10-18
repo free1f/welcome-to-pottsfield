@@ -8,6 +8,7 @@ import { mainScene, scene } from './scene/main.js'
 import gui from './utils/gui.js'
 import './scene/sky.js'
 import './models/enoch.js'
+import './models/wirt.js'
 import './geometries/cube.js'
 import './scene/floor.js'
 import './scene/lights.js'
@@ -77,6 +78,8 @@ const tick = () =>
     renderer.render(scene, orthographicCamera)
   } else {
     controls.update()
+    controls.enableRotate = false
+    controls.enableZoom = false
     renderer.render(mainScene, camera)
   }
 

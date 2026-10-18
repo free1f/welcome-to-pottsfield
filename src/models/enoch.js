@@ -1,6 +1,5 @@
 import { mainScene, gltfLoader } from '../scene/main.js'
 
-// Models
 gltfLoader.load(
   '/enoch/SM_Enoch.gltf',
   (gltf) => {

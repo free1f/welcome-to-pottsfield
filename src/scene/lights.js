@@ -7,8 +7,9 @@ const ambientLight = new THREE.AmbientLight('#dfe7ec', 0.275)
 mainScene.add(ambientLight)
 
 // Directional light
-const directionalLight = new THREE.DirectionalLight('#86cdff', 1)
-directionalLight.position.set(0, 10, 30)
+const directionalLight = new THREE.DirectionalLight('#fcfcfc', 1)
+directionalLight.position.set(10, 5, 30)
+directionalLight.intensity = 0.2
 mainScene.add(directionalLight)
 const directionalHelper = new THREE.DirectionalLightHelper(directionalLight)
 mainScene.add(directionalHelper)

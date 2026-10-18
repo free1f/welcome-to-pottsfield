@@ -35,7 +35,7 @@ const floor = new THREE.Mesh(
     metalnessMap: floorARMTexture,
     normalMap: floorNormalTexture,
     displacementMap: floorDisplacementTexture,
-    displacementScale: 0.3,
+    displacementScale: 0,
     displacementBias: -0.2
   })
 )

@@ -5,8 +5,9 @@ import { sizes } from '../utils/constants.js'
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100)
-camera.position.y = 20
-camera.position.z = 40
+camera.position.y = 5
+camera.position.z = 7
+camera.position.x = -7
 
 const orthoHeight = 2
 const orthographicCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 30)
